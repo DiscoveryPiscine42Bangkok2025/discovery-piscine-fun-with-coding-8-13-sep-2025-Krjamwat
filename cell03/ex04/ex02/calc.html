@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator (jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <input id="Num_1"/>
+        <select id="operator">
+            <option value="Choose">Choose</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input id="Num_2"/>
+        <button id="calculateBtn">Try me!</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            function OnlyNumbers(str) {
+                return /^[0-9]+$/.test(str);
+            }
+
+            function calculate() {
+                let number1 = $("#Num_1").val();
+                let number2 = $("#Num_2").val();
+                let operator = $("#operator").val();
+
+                if (operator === "Choose") {
+                    alert("Please select an operator");
+                } else if (OnlyNumbers(number1) && OnlyNumbers(number2)) {
+                    if (parseInt(number1) < 0 || parseInt(number2) < 0) {
+                        alert("Error :(");
+                    } else if ((operator === "%" || operator === "/") && parseInt(number2) === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                    } else {
+                        let result = eval(number1 + operator + number2);
+                        alert(result);
+                        console.log(result);
+                    }
+                } else {
+                    alert("Error :(");
+                }
+            }
+
+            // กดแล้วคำนวณสุดโหด
+            $("#calculateBtn").on("click", function () {
+                calculate();
+            });
+
+            // greeting หลัง 30 วินาที 30000ms
+            setTimeout(function () {
+                alert("Please, use me...");
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

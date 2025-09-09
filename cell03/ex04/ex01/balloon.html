@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            transform: translate(-50%, -50%);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+
+        .balloon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: red;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="balloon"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const balloon = $(".balloon");
+
+            function change_color(el) { // forward
+                let color = el.css("background-color");
+                if (color === "rgb(255, 0, 0)") { // red
+                    el.css("background-color", "green");
+                } else if (color === "rgb(0, 128, 0)") { // green
+                    el.css("background-color", "blue");
+                } else {
+                    el.css("background-color", "red");
+                }
+            }
+
+            function inv_color(el) { // reverse
+                let color = el.css("background-color");
+                if (color === "rgb(0, 0, 255)") { // blue
+                    el.css("background-color", "green");
+                } else if (color === "rgb(0, 128, 0)") { // green
+                    el.css("background-color", "red");
+                } else {
+                    el.css("background-color", "blue");
+                }
+            }
+
+            function main(el) {
+                change_color(el);
+
+                let width = el.width();
+                if (width < 420) {
+                    el.width(width + 10);
+                    el.height(el.height() + 10);
+                } else {
+                    el.width(200);
+                    el.height(200);
+                }
+            }
+
+            function fab(el) { // แฟ่บ
+                let width = el.width();
+                if (width > 200) {
+                    inv_color(el);
+                    el.width(width - 5);
+                    el.height(el.height() - 5);
+                }
+            }
+
+            // event binding
+            balloon.on("click", function () {
+                main($(this));
+            });
+
+            balloon.on("mouseleave", function () {
+                fab($(this));
+            });
+        });
+    </script>
+</body>
+</html>
