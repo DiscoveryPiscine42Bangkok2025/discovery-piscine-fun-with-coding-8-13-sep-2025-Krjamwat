@@ -28,22 +28,9 @@ p {
   color: rgb(85, 85, 85);
 }
 
-.back-video {
-  position: absolute;
-  z-index: -1;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
 /* TRANSITION */
 
-a,
-.btn {
+a{
   transition: all 300ms ease;
 }
 
@@ -75,7 +62,7 @@ nav {
   font-size: 1.5rem;
 }
 
-.logo a {
+.name a {
   text-decoration: none;
   color: rgb(51, 9, 16);
 }
@@ -89,7 +76,7 @@ nav {
   margin-left: 40px;
 }
 
-.nav-links a::before {
+.nav-links a::before {  /* pseudo element สร้างขึ้นมาใน css html ไม่มีเอามาโชว์ความสวยงาม */
   content:'';
   position: absolute;
   top: 100%;
@@ -97,104 +84,20 @@ nav {
   width: 0;
   height: 2px;
   background: rgb(238, 23, 23);
-  transition: .3s;
+  transition: .3s; /* animation เส้นแดง */
 }
 
 .nav-links :hover::before {
-  width: 100%;
+  width: 100%; /* ขยายเส้นแดง */
 }
 
-.logo {
+.name {
   font-size: 2rem;
   color: white;
 }
 
-.logo:hover {
-  cursor: default;
-}
-
-/* HAMBURGER MENU */
-
-#hamburger-nav {
-  display: none;
-  top: 0;
-  position: sticky;
-  background-color: rgba(216, 216, 216, 0.4);
-  backdrop-filter: blur(8px);
-}
-
-.hamburger-menu {
-  position: relative;
-  display: inline-block;
-}
-
-.hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  width: 30px;
+.name:hover {
   cursor: pointer;
-}
-
-.hamburger-icon span {
-  width: 100%;
-  height: 2px;
-  background-color: rgb(255, 255, 255);
-  transition: all 0.3 ease-in-out;
-}
-
-.menu-links {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3 ease-in-out;
-}
-
-.menu-links a {
-  display: block;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: black;
-  text-decoration: none;
-  transition: all 0.3 ease-in-out;
-}
-
-.menu-links li {
-  list-style: none;
-}
-
-.menu-links.open {
-  max-height: 300px;
-}
-
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
 }
 
 /* SECTIONS */
@@ -207,15 +110,7 @@ section {
   min-height: fit-content;
 }
 
-.section-container {
-  display: flex;
-}
-
 /* PROFILE SECTION */
-
-.img-round {
-  border-radius: 10%;
-}
 
 #profile {
   display: flex;
@@ -234,19 +129,17 @@ section {
   justify-content: center;
 }
 
-.section__text {
+.text {
   align-self: center;
   text-align: center;
   color: white;
 }
 
-.section__text p {
+.text p {
   font-weight: 600;
-}
-
-.section__text__p1 {
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
 }
 
 .title {
@@ -255,158 +148,107 @@ section {
   font-family: 'Technology', sans-serif;
 }
 
-#socials-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-/* ICONS */
-
+/* icon all อย่าง */
 .icon {
   cursor: pointer;
   height: 2rem;
   border-radius: 50%;
 }
 
-/* BUTTONS */
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-.btn {
-  font-weight: 600;
-  padding: 1rem;
-  width: 8rem;
-  border-radius: 2rem;
-  overflow: hidden;
-  border-radius: 30px;
-}
-.btn:hover {
-  transform: translate(0,-6px);
-  box-shadow: 10px -10px 25px 0px rgba(143,64,248,0.5),
-  -10px 10px 25px 0px rgba(39,200,255,0.5);
-}
 /* ABOUT SECTION */
-
 #about {
   position: relative;
   margin-top: 10%;
-}
-
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
 .about-details-container {
   justify-content: center;
-  flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
   display: flex;
-  align-items: center;
-}
-
-.about-pic {
-  border-radius: 2rem;
-}
-
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 3rem;
-}
-
-.details-container {
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 550px;
-  min-width: 300px;
+  flex-direction: column; /* วางรายละเอียดภายในจากบนลงล่าง */
+  align-items: center;    /* กึ่งกลางแนวนอน */
   background: white;
   border-radius: 2rem;
   border: 0.1rem solid rgb(163, 163, 163);
   text-align: center;
   margin: 0 auto;
+  max-width: 550px;
+  min-width: 300px;
+  padding: 2rem;          /* เพิ่ม padding ให้ดูไม่ติดขอบ */
 }
 
-.section-container {
-  gap: 4rem;
-  height: 80%;
+.about-details-container p{
+  font-size: larger;
 }
 
-
-/* EXPERIENCE SECTION */
-
-#experience {
+/* Skills SECTION */
+#Skills {
   position: relative;
-}
-
-.experience-sub-title {
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
-}
-
-.experience-details-container {
+  margin-top: 10%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.Skills-details-container {
   justify-content: center;
   flex-direction: column;
-
-}
-
-.article-container {
   display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+  align-items: center;
+  background: white;
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(163, 163, 163);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 550px;
+  min-width: 300px;
+  padding: 2rem;
 }
 
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
-}
-
-article .icon {
-  cursor: default;
+.Skills-details-container p{
+  font-size: larger;
 }
 
 /* PROJECTS SECTION */
 
 #projects {
-  position: relative;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+.projects-container { /* array ของ project detail container */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.project-img {
+.Project-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  border: 0.1rem solid rgb(163, 163, 163);
+  text-align: center;
+  padding: 2rem;
+  max-width: 300px;
+  min-width: 150px;
+  gap: 1rem;
 }
 
-.project-title {
-  margin: 1rem;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+.Project-details-container img {
+  width: 100%;
+  border-radius: 2rem;
 }
 
 /* CONTACT */
@@ -416,17 +258,6 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
 }
 
 .contact-info-container {
@@ -441,18 +272,6 @@ article .icon {
   font-size: larger;
 }
 
-.contact-info-container p a{
-  text-decoration: none;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-.email-icon {
-  height: 2.5rem;
-}
-
 /* FOOTER SECTION */
 
 footer {
@@ -462,4 +281,120 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1400px) {
+  #profile {
+    flex-direction: column;
+    gap: 2rem;
+    min-height: fit-content;
+    margin-bottom: 6rem;
+  }
+
+  .section__pic-container {
+    width: 50%;
+    height: auto;
+  }
+
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  section {
+    margin: 0 5%;
+  }
+
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  .about-details-container,
+  .Skills-details-container,
+  .Project-details-container {
+    max-width: 80%;
+    min-width: 200px;
+  }
+
+  .about-containers {
+    margin-top: 0;
+    flex-wrap: wrap;
+  }
+
+  #Skills,
+  .Skills-details-container {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .text p {
+    font-size: 24px;
+  }
+
+  #projects .Project-details-container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #profile,
+  #about,
+  #Skills,
+  #projects {
+    padding: 2rem 1rem;
+  }
+
+  #profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: auto;
+    height: auto;
+  }
+
+  nav {
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .section__pic-container {
+    width: 80vw;
+    height: auto;
+    max-width: 280px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .Project-details-container {
+    width: 90%;
+  }
+
+  .text p {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
 }

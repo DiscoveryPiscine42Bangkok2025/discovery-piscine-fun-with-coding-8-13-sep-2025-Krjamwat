@@ -4,302 +4,100 @@
     <meta charset="UTF-8" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link  rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
 
-    <!-- nav ในตอนตกกะปิ -->
+    <!-- nav-->
     <nav id="desktop-nav">
-      <div class="logo"><a href="#profile">Krittapat</a></div>
+      <div class="name"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1">Click me</a></div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#Skills">Skills</a></li>
           <li><a href="#projects">Activities</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- nav หลังจาก responsive -->
-    <nav id="hamburger-nav">
-      <div class="logo">Krittapat</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Activities</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-
     <!-- profile -->
     <section id="profile">
       <div class="section__pic-container">
-        <img class="img-round" src="./assets/IMG_4014.PNG" alt="Krittapat profile picture" />
+        <img src="./assets/cat-removebg-preview.png" alt="Krittapat profile picture" />
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h5 style="font-size: 65px;">
-          Krittapat Jamwattakul
-        </h5>
-        <div class="btn-container">
-          <button class="btn" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/2021_Facebook_icon.svg.webp"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.facebook.com/krittapat.jamwattakul'"
-          />
-          <img
-            src="./assets/Instagram_icon.png.webp"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://www.instagram.com/bonuy_/'"
-          />
-        </div>
+      <div class="text">
+        <p> Hello, I'm </p>
+        <h5 style="font-size: 65px;">Krittapat Jamwattakul<br>Nice to meet you.</h5>
       </div>
     </section>
 
     <!-- about -->
     <section id="about">
       <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/IMG_4014.PNG"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/hobby.png"
-                alt="Hobby icon"
-                class="icon"
-              />
-              <h3>Hobby</h3>
-              <p>Gaming<br>Sport</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>IT22 KMITL</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/4384379.png"
-                alt="Interest icon"
-                class="icon"
-              />
-              <h3>Interest</h3>
-              <p>Game Development<br>Web Development<br>3D Development</p>
-            </div>
-          </div>
-          <div class="text-container">
-          </div>
-        </div>
+      <div class="about-details-container">
+        <p>Hobby : I like to play game and do some sports.</p>
+        <br>
+        <p>Education : I am studying in IT22 KMITL.</p>
+        <br>
+        <p>Interest : I have interest in game development,web development, 3D development </p>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
     
-    <!-- experience -->
-    <section id="experience">
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Blender</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JAVA</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
+    <!-- skills -->
+    <section id="Skills">
+      <h1 class="title">Skills</h1>
+      <div class="Skills-details-container">
+        <p>HTML : Basic</p>
+        <br>
+        <p>CSS : Basic</p>
+        <br>
+        <p>Python : Basic</p>
+        <br>
+        <p>JavaScript : Basic</p>
+        <br>
+        <p>Blender : Basic</p>
+        <br>
+        <p>C : Basic</p>
+        <br>
+        <p>JAVA : Basic</p>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
 
     <!-- project -->
     <section id="projects">
       <h1 class="title">Activities</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/chickenkrub.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">3D Model by Blender</h2>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/sweettomb.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Game Project JAVA</h2>
-            <div class="btn-container">
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/easybook.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project PSCP Y1</h2>
-            <div class="btn-container">
-            </div>
-          </div>
+      <div class="projects-container">
+        <div class="Project-details-container">
+          <img src="./assets/chickenkrub.png" alt="Project 1" />
+          <h2>3D Model by Blender</h2>
+        </div>
+        <div class="Project-details-container">
+          <img src="./assets/sweettomb.png" alt="Project 2" />
+          <h2>Game Project JAVA</h2>
+        </div>
+        <div class="Project-details-container">
+          <img src="./assets/easybook.png" alt="Project 3" />
+          <h2>Project PSCP Y1</h2>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
 
     <!-- contact -->
     <section id="contact">
       <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
+          <img src="./assets/email.png" class="icon contact-icon email-icon"/>
           <p>67070001@kmitl.ac.th</p>
+          <img src="./assets/2021_Facebook_icon.svg.webp" class="icon" onclick="location.href='https://www.facebook.com/krittapat.jamwattakul'"/>
+          <p>Krittapat Jamwattakul</p>
+          <img src="./assets/Instagram_icon.png.webp" class="icon" onclick="location.href='https://www.instagram.com/bonuy_/'"/>
+          <p>bonuy_</p>
         </div>
-      </div>
     </section>
 
     <!-- footer -->
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Activities</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2025 Krittapat Jamwattakul. All Rights Reserved.</p>
+      <p>Copyright © 2025 Krittapat Jamwattakul. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>
